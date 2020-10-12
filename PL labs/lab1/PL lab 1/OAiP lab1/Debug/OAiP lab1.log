@@ -1,0 +1,6 @@
+﻿  Receipt.cpp
+C:\Users\Ivan\source\repos\OAiP lab1\OAiP lab1\Receipt.cpp(24,14): warning C4305: аргумент: усечение из "double" в "float"
+  main.cpp
+C:\Users\Ivan\source\repos\OAiP lab1\OAiP lab1\main.cpp(20,31): warning C4305: аргумент: усечение из "double" в "float"
+  Создание кода...
+  OAiP lab1.vcxproj -> C:\Users\Ivan\source\repos\OAiP lab1\Debug\OAiP lab1.exe
