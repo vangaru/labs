@@ -13,18 +13,12 @@ def get_decart_mult(array):
 # ФУНКЦИЯ ВОЗВРАЩАЕТ TRUE, ЕСЛИ ПАРА ДЕКАРТОВА ПРОИЗВЕДЕНИЯ
 # ОТНОСИТСЯ К ОТНОШЕНИЮ R1
 def R1_build(pair):
-	if pair[0] % 4 == pair[1] % 4:
-		return True
-	else:
-		return False
+	return pair[0] % 4 == pair[1] % 4
 
 # ФУНКЦИЯ ВОЗВРАЩАЕТ TRUE, ЕСЛИ ПАРА ДЕКАРТОВА ПРОИЗВЕДЕНИЯ
 # ОТНОСИТСЯ К ОТНОШЕНИЮ R1
 def R2_build(pair):
-	if pair[0] + pair[1] == 8:
-		return True
-	else:
-		return False
+	return pair[0] + pair[1] == 8
 
 # ФУНКЦИЯ ВОЗВРАЩАЕТ ОТНОШЕНИЕ R1
 def get_R1(array):
@@ -95,3 +89,39 @@ def get_transitive_closure(matrix):
 					transitive_closure[i][j] = 1
 				
 	return transitive_closure
+
+def attitudes_composition(R1, R2):
+	composition = []
+	composition_pair = []
+
+	for R1_pair in R1:
+		for R2_pair in R2:
+			if R1_pair[1] == R2_pair[0]:
+				composition_pair.append(R1_pair[0])
+				composition_pair.append(R2_pair[1])
+				composition.append(composition_pair)
+				composition_pair = []
+
+	
+	new_composition = []
+	for pair in composition:
+		if pair not in new_composition:
+			new_composition.append(pair)
+
+	return new_composition
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
