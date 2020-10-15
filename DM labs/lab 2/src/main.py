@@ -1,4 +1,4 @@
-#ЗАДАНИЕ 1
+#ОТНОШЕНИЯ
 
 import funcs
 
@@ -34,6 +34,17 @@ print(funcs.attitudes_composition(R1, R2))
 
 print("КОМПОЗИЦИЯ ОТНОШЕНИЙ R2 И R1")
 print(funcs.attitudes_composition(R2, R1))
+
+
+#ФУНКЦИИ
+
+#ЗАДАНИЕ 1
+B = [1, 2, 3, 4]
+C = [5, 6, 7, 8]
+S = [[1, 8], [2, 7], [3, 5], [4, 6]]
+
+print("ЯВЛЯЕТСЯ ЛИ ОТНОШЕНИЕ S ФУНКЦИЕЙ")
+print(funcs.is_func(S))
 
 
 

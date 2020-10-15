@@ -78,6 +78,7 @@ def get_relation_addition(array, R):
 
 	return relation_addition 
 
+# ФУНКЦИЯ ВОЗВРАЩАЕТ МАТРИЦУ ТРАНЗИТИВНОГО ЗАМЫКАНИЯЫ
 def get_transitive_closure(matrix):
 	n = len(matrix)
 	transitive_closure = matrix 
@@ -90,6 +91,7 @@ def get_transitive_closure(matrix):
 				
 	return transitive_closure
 
+# ФУНКЦИЯ ВОЗВРАЩАЕТ КОМПОЗИЦИЮ ДВУХ ОТНОШЕНИЙ
 def attitudes_composition(R1, R2):
 	composition = []
 	composition_pair = []
@@ -109,6 +111,19 @@ def attitudes_composition(R1, R2):
 			new_composition.append(pair)
 
 	return new_composition
+
+#ФУНКЦИЯ ВОЗВРАЩАЕТ TRUE ЕСЛИ ОТНОШЕНИЕ ЯВЛЯЕТСЯ ФУНКЦИЕЙ 
+def is_func(S):
+	unambiguity = []
+
+	for pair in S:
+		
+		if pair[0] in unambiguity:
+			return False
+		
+		unambiguity.append(pair[0])
+
+	return True
 
 
 
