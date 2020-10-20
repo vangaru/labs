@@ -32,11 +32,12 @@ def cols_sum(matrix):
 #Функция сложения по строкам четных элементов.
 def even_rows_sum(matrix):
 	for row in matrix:
-
+		
 		row_sum = 0
-
-		for element in row[1::2]:
-			row_sum += element
+		
+		for element in row:
+			if element % 2 == 0:
+				row_sum += element
 
 		print(str(row) + " == " + str(row_sum))
 
@@ -47,9 +48,10 @@ def even_cols_sum(matrix):
 	for i in range(len(matrix[0])):
 		col_sum.append(0)
 
-	for row in matrix[1::2]:
-		for j in range(len(row)):
-			col_sum[j] += row[j]
+	for i in range(len(matrix)):
+		for j in range(len(matrix[i])):
+			if matrix[i][j] % 2 == 0:
+				col_sum[j] += matrix[i][j]
 
 	print_matrix(matrix)
 	print("========================")
