@@ -1,5 +1,5 @@
 from random import randint
-import functions
+import task2_functions
 
 print("\nЗАДАНИЕ 2 ПУНКТ 1")
 print("Пусть задано некоторое число my_number. Пользователь вводит свое число user_number.")

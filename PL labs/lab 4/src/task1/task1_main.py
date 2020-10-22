@@ -1,4 +1,4 @@
-import functions
+import task1_functions
 
 print("\nЗАДАНИЕ 1 ПУНКТ 1")
 print("Решить пример по варианту")

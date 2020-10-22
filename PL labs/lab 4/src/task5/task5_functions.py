@@ -27,9 +27,9 @@ def add_two(lst, el1, el2):
 
 def del_even(lst):
 	for element in lst:
-		if element % 2 == 0:
+		if (type(element) is int or type(element) is float) and  element % 2 == 0:
 			lst.remove(element)
-	print(lst)
+	return lst
 
 def print_group_info(my_len, group_name):
 	group_info = ""
@@ -57,6 +57,3 @@ def print_group_students(my_len):
 			full_name = name.split()
 			if len(full_name[1]) < 7:
 				print(full_name[1])	
-
-
-	

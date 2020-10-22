@@ -1,4 +1,4 @@
-import functions
+import task4_functions
 
 print("\nЗАДАНИЕ 4")
 
