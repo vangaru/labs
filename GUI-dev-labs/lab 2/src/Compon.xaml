@@ -1,0 +1,58 @@
+﻿<Window x:Class="imdone.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:imdone"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130px"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" LastChildFill="False">
+                <TextBlock DockPanel.Dock="Top">Последние документы</TextBlock>
+                <TextBlock DockPanel.Dock="Top" Margin="0,5,0,0">1.txt</TextBlock>
+                <TextBlock DockPanel.Dock="Top" Margin="0,5,0,0">2.txt</TextBlock>
+                <TextBlock DockPanel.Dock="Top" Margin="0,5,0,0">3.txt</TextBlock>
+                <TextBlock DockPanel.Dock="Top" Margin="0,5,0,0">4.txt</TextBlock>
+                <TextBlock DockPanel.Dock="Top" Margin="0,5,0,0">5.txt</TextBlock>
+                <TextBlock DockPanel.Dock="Top" Margin="0,5,0,0">6.txt</TextBlock>
+            </DockPanel>
+
+            <Grid  Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Height="120px">
+                <StackPanel Orientation="Vertical">
+                    <DockPanel LastChildFill="False">
+                        <Button Content="Открыть" Height="20px"/>
+                        <Button Content="Сохранить" Margin="10, 0, 0, 0" Height="20px"/>
+                        <Button Content="Закрыть" Margin="10, 0, 0, 0" Height="20px"/>
+                        <Button Content="Обработать" Margin="10, 0, 0, 0" Height="20px"/>
+                        <Button Content="О Программе" Margin="10, 0, 0, 0" Height="20px"/>
+                    </DockPanel>
+
+                    <DockPanel LastChildFill="False" Margin="0,10,0,0">
+                        <TextBlock FontWeight="Bold">1.txt</TextBlock>
+                        <TextBlock>2.txt</TextBlock>
+                        <TextBlock>3.txt</TextBlock>
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        <WrapPanel Margin="130px,60px,0,0">
+            <Button Content="A" Width="50px" Height="60px" Margin="10,0,0,0" Background="Red"/>
+            <Button Content="B" Width="50px" Height="60px" Margin="10,0,0,0" Background="Green"/>
+            <Button Content="C" Width="50px" Height="60px" Margin="10,0,0,0" Background="Blue"/>
+            <Button Content="D" Width="50px" Height="60px" Margin="10,0,0,0" Background="Yellow"/>
+            <Button Content="E" Width="50px" Height="60px" Margin="10,0,0,0" Background="Gray"/>
+            <Button Content="F" Width="50px" Height="60px" Margin="10,0,0,0" Background="White"/>
+        </WrapPanel>
+    </Grid>
+</Window>
