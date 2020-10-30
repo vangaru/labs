@@ -92,7 +92,7 @@ def get_transitive_closure(matrix):
 	return transitive_closure
 
 # ФУНКЦИЯ ВОЗВРАЩАЕТ КОМПОЗИЦИЮ ДВУХ ОТНОШЕНИЙ
-def attitudes_composition(R1, R2):
+def attitudes_composition( R1, R2):
 	composition = []
 	composition_pair = []
 
@@ -125,7 +125,24 @@ def is_func(S):
 
 	return True
 
+def func_type(B, C, S):
+	if is_func(S):
+		C_involved = []
+		for pair in S:
+			C_involved.append(pair[1])
+		C_involved = set(C_involved)
 
+
+		if(len(C) > len(C_involved)):
+			print("Не инъекция и не сюрьекция")
+		elif len(B) < len(C_involved):
+			print("Инъекция не сюрьекция")
+		elif len(C_involved) < len(B):
+			print("Сюрьекция не инъекция")
+		else:
+			print("Биекция")
+		return
+	print("Не функция")
 
 
 

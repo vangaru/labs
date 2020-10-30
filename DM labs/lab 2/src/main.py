@@ -30,22 +30,22 @@ print("ТРАНЗИТИВНОЕ ЗАМЫКАНИЕ ОТНОШЕНИЯ R2")
 print(funcs.get_transitive_closure(matrix = funcs.matrix_build(R2, A)))
 
 print("КОМПОЗИЦИЯ ОТНОШЕНИЙ R1 И R2")
-print(funcs.attitudes_composition(R1, R2))
+print(funcs.attitudes_composition([[1, 4], [5, 2], [6, 3], [4, 5]], [[4, 5], [3, 5], [5, 1], [3, 5]]))
 
 print("КОМПОЗИЦИЯ ОТНОШЕНИЙ R2 И R1")
-print(funcs.attitudes_composition(R2, R1))
+print(funcs.attitudes_composition([[4, 5], [3, 5], [5, 1], [3, 5]], [[1, 4], [5, 2], [6, 3], [4, 5]]))
 
 
-#ФУНКЦИИ
+#ФУНКЦИИ 
 
 #ЗАДАНИЕ 1
 
 B = [1, 2, 3, 4]
-C = [5, 6, 7, 8]
-S = [[1, 8], [2, 7], [3, 5], [4, 6]]
+C = [5, 6, 7]
+S = [[1, 5], [2, 7], [4, 7], [3, 6]]
 
 print("ЯВЛЯЕТСЯ ЛИ ОТНОШЕНИЕ S ФУНКЦИЕЙ")
-print(funcs.is_func(S))
+funcs.func_type(B, C, S)
+  
 
-
-
+print(1 & 0)
