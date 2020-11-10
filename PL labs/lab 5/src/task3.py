@@ -8,7 +8,12 @@ def interface(students_info_list):
 
 		elif choice == 2:
 			for i in range(len(students_info_list)):
-				students_info_list[i][2] = int(students_info_list[i][2]) - 1
+				students_info_list[i][2] = str(int(students_info_list[i][2]) - 1)
+
+			with open('studetns_info.txt', 'w', encoding = 'utf-8') as students_info:
+				for student in students_info_list:
+					students_info.write(';'.join(student) + '\n')
+
 
 			for student in students_info_list:
 				print(student)
