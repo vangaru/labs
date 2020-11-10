@@ -47,9 +47,6 @@ class Network:
         gradient_layer_1 = -(self.tanh(outputs_1) ** 2) - 1
         weights_delta_layer_1 = error_layer_1 * gradient_layer_1
         self.weights_0_1 -= np.dot(inputs.reshape(len(inputs), 1), weights_delta_layer_1).T * self.learning_rate
-       
-
-        
 
 
 def MSE(y, Y):
@@ -78,7 +75,7 @@ network = Network(learning_rate)
 
 losses = {'train':[], 'validation':[]}
 
-Emin = 1e-6
+Emin = 1e-5
 train_loss = 0
 
 epoch = 0
