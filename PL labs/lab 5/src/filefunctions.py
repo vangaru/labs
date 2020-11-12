@@ -1,5 +1,4 @@
 import csv
-import operator
 
 def get_students_info():
 	with open('students_info.csv', 'r') as file:
