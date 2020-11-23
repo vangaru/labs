@@ -1,5 +1,7 @@
 import functions
 
+# ЗАДАНИЕ 1
+
 _ = float('inf')
 matrix_dict = {
 	"s1":{"s1":_, "s2":5, "s3":8, "s4":_, "s5":11, "s6":_},
@@ -19,5 +21,18 @@ matrix = [
     [_, _, 10, 2, 7, _]
 ]
 
-functions.prim(matrix_dict)
-functions.kruskal(matrix, 6)
+#functions.prim(matrix_dict)
+#functions.kruskal(matrix, len(matrix))
+
+
+
+# ЗАДАНИЕ 2
+
+edges_list = [(1, 2), (1, 4), (2, 3), (2, 4), (3, 4), (3, 6), (4, 5), (5, 6)]
+am = functions.adjacency_matrix(edges_list)
+print(am)
+
+print(functions.incidence_matrix(edges_list))
+
+
+
