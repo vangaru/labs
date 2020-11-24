@@ -74,24 +74,30 @@ def get_vertexes(edges):
 		vertexes.add(edge[1])
 	return vertexes
 
+def get_all_edges_list(edges, vertexes):
+	all_edges_list = []
+
+	for i in range(len(vertexes)):
+		for j in range(len(vertexes)):
+			if (i + 1, j + 1) in edges:
+				all_edges_list.append( (i + 1, j + 1) )
+
+			else:
+				all_edges_list.append( () )
+
+	return all_edges_list
+
 
 def adjacency_matrix(edges):
 	vertexes = get_vertexes(edges)
 	
 	adjacency_matrix = np.zeros( (len(vertexes), len(vertexes)), dtype = int )
 
-	all_edges_list = []
+	all_edges_list = get_all_edges_list(edges, vertexes)
 
-	for i in range(6):
-		for j in range(6):
-			if (i + 1, j + 1) in edges:
-				all_edges_list.append( (i + 1, j + 1) )
-
-			else:
-				all_edges_list.append(0)
 
 	for edge in all_edges_list:
-		if edge != 0:
+		if len(edge) == 2:
 			adjacency_matrix[edge[0] - 1][edge[1] - 1] = 1
 			adjacency_matrix[edge[1] - 1][edge[0] - 1] = 1
 
@@ -111,4 +117,47 @@ def incidence_matrix(edges):
 
 	return incidence_matrix
 
+
+def get_vertex_power(vertex, incidence_matrix):
+	vertex_edges = incidence_matrix[vertex - 1]
+	power = 0
+	for edge in vertex_edges:
+		if edge == 1:
+			power += 1
+	return power
+
+def print_vertexes_power(vertexes, incidence_matrix):
+	for vertex in vertexes:
+		power = get_vertex_power(vertex, incidence_matrix)
+		print("Вершина: " + str(vertex) + " Мощность: " + str(power)) 
 	
+
+
+# ПОИСК В ГЛУБИНУ
+
+def get_adjacent_edges(matrix):
+	adjacent_edges = dict()
+	for i in range(len(matrix)):
+		edges = set()
+		for j in range(len(matrix)):
+			if matrix[i][j] == 1:
+				edges.add(j + 1)
+		adjacent_edges[i + 1] = edges
+	return adjacent_edges
+
+def dfs(start, visited, prev, adjacent_edges):
+    visited[start] = True
+    for i in adjacent_edges[start]:
+        if not visited[i]:
+            prev[i] = start 
+            dfs(i, visited, prev, adjacent_edges)
+
+def get_components(start, visited, prev, adjacent_edges, n):
+	ncomp = 0
+	for i in range(1, n + 1):
+		if not visited[i]:
+			ncomp += 1
+			dfs(i, visited, prev, adjacent_edges)
+	print("Количество компонент связности: " + str(ncomp))
+
+#ПОИСК В ШИРИНУ

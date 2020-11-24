@@ -28,11 +28,18 @@ matrix = [
 
 # ЗАДАНИЕ 2
 
-edges_list = [(1, 2), (1, 4), (2, 3), (2, 4), (3, 4), (3, 6), (4, 5), (5, 6)]
-am = functions.adjacency_matrix(edges_list)
-print(am)
+edges = [(1, 2), (1, 4), (2, 3), (2, 4), (3, 4), (3, 6), (4, 5), (5, 6)]
 
-print(functions.incidence_matrix(edges_list))
+am = functions.adjacency_matrix(edges)
+im = functions.incidence_matrix(edges)
+
+vertexes = functions.get_vertexes(edges)
 
 
 
+adjacent_edges = functions.get_adjacent_edges(am)
+
+n = 6
+visited = [False] * (n + 1)
+prev = [None] * (n + 1)
+#functions.get_components(1, visited, prev, adjacent_edges, n)
