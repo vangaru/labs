@@ -39,7 +39,10 @@ vertexes = functions.get_vertexes(edges)
 
 adjacent_edges = functions.get_adjacent_edges(am)
 
-n = 6
-visited = [False] * (n + 1)
-prev = [None] * (n + 1)
-#functions.get_components(1, visited, prev, adjacent_edges, n)
+# n = 6
+# visited = [False] * (n + 1)
+# prev = [None] * (n + 1)
+# functions.get_components(1, visited, prev, adjacent_edges, n)
+visited = [False] * len(matrix)
+functions.bfs(am, visited)
+

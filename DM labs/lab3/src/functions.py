@@ -161,3 +161,27 @@ def get_components(start, visited, prev, adjacent_edges, n):
 	print("Количество компонент связности: " + str(ncomp))
 
 #ПОИСК В ШИРИНУ
+
+def bfs(matrix, visited):
+	visited = [False] * len(matrix)
+	queue = [0]
+	visited[0] = 1
+	node = queue.pop(0)
+
+	print (node + 1)
+
+	while True:
+
+		for x in range (0, len(visited)):
+
+			if matrix[node][x] == 1 and visited[x] == 0:
+				visited[x] = 1
+				queue.append(x)
+		
+		if len(queue) == 0:
+			break
+
+		else:
+			node = queue.pop(0)
+			print (node + 1)
+
