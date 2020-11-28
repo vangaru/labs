@@ -1,0 +1,15 @@
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\bin\Debug\TextEditor.exe.config
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\bin\Debug\TextEditor.exe
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\bin\Debug\TextEditor.pdb
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.csprojAssemblyReference.cache
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\MainWindow.g.cs
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\App.g.cs
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor_MarkupCompile.cache
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor_MarkupCompile.lref
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\MainWindow.baml
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.g.resources
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.Properties.Resources.resources
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.exe
+C:\Users\Ivan\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.pdb

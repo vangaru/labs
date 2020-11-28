@@ -1,0 +1,119 @@
+﻿<Window x:Class="TextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="Buttons">
+            <Setter Property="Margin" Value="5,0,5,0"/>
+            <Setter Property="Background" Value="#282829"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="Red" />
+                    </Trigger.Setters>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="AliceBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button" x:Key="CloseButton" BasedOn="{StaticResource Buttons}">
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=MainWindowTextBox1, Path=Text}" Value=""/>
+                        <Condition Binding="{Binding ElementName=MainWindowTextBox2, Path=Text}" Value=""/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+            <Setter Property="IsEnabled" Value="False"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="15,0,0,0"/>
+            <Setter Property="Width" Value="100px"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="MainWindowTextBox">
+            <Setter Property="Control.Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,0.5">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#282829" Offset="2"/>
+                            <GradientStop Color="LightGray" Offset="1"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=FontStyles, Path=SelectedIndex}" Value="0">
+                    <DataTrigger.Setters>
+                        <Setter Property="Foreground" Value="DimGray"/>
+                        <Setter Property="FontSize" Value="12"/>
+                    </DataTrigger.Setters>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=FontStyles, Path=SelectedIndex}" Value="1">
+                    <DataTrigger.Setters>
+                        <Setter Property="Foreground" Value="DarkOrange"/>
+                        <Setter Property="FontSize" Value="12"/>
+                    </DataTrigger.Setters>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=FontStyles, Path=SelectedIndex}" Value="2">
+                    <DataTrigger.Setters>
+                        <Setter Property="Foreground" Value="LightBlue"/>
+                        <Setter Property="FontSize" Value="12"/>
+                    </DataTrigger.Setters>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=FontStyles, Path=SelectedIndex}" Value="3">
+                    <DataTrigger.Setters>
+                        <Setter Property="Foreground" Value="Indigo"/>
+                        <Setter Property="FontSize" Value="12"/>
+                    </DataTrigger.Setters>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox" x:Key="FontSizeTextBox">
+            <Setter Property="Width" Value="100px"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="Background" Value="#282829"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+            <Setter Property="BorderBrush" Value="DimGray"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#282829">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Margin="3">
+                <Button Style="{StaticResource Buttons}">Открыть</Button>
+                <Button Style="{StaticResource Buttons}" Click="Clear_Button_Click">Очистить</Button>
+                <ComboBox x:Name="FontStyles" SelectedIndex="0">
+                    <ComboBoxItem>Обычный</ComboBoxItem>
+                    <ComboBoxItem>Лава</ComboBoxItem>
+                    <ComboBoxItem>Вода</ComboBoxItem>
+                    <ComboBoxItem>Космос</ComboBoxItem>
+                </ComboBox>
+                <TextBox x:Name="FontSize1" Style="{StaticResource FontSizeTextBox}" Text="{Binding ElementName=MainWindowTextBox1, Path=FontSize}"/>
+                <TextBox x:Name="FontSize2" Style="{StaticResource FontSizeTextBox}" Text="{Binding ElementName=MainWindowTextBox2, Path=FontSize}"/>
+                <Button Style="{StaticResource CloseButton}" HorizontalAlignment="Right" Click="Close_Button_Click">Закрыть</Button>
+            </DockPanel>
+            <TextBox x:Name="MainWindowTextBox1" Grid.Row="1" Grid.Column="0" Style="{StaticResource MainWindowTextBox}" FontSize="{Binding ElementName=FontSize1, Path=Text}"/>
+            <TextBox x:Name="MainWindowTextBox2" Grid.Row="2" Grid.Column="0" Style="{StaticResource MainWindowTextBox}" FontSize="{Binding ElementName=FontSize2, Path=Text}"/>
+        </Grid>
+    </Grid>
+</Window>
