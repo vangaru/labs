@@ -46,3 +46,5 @@ print("Строка: " + string)
 functions.calculate_data(string)
 
 
+a = "Hello world"
+print(a[2:-2])

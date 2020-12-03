@@ -1,6 +1,8 @@
-import csv
+import os
 
-with open('students_info.csv', 'r', encoding = 'utf-8') as file:
-	reader = csv.DictReader(file, delimiter = ';')
-	for line in reader:
-		print ([line["№"], line["ФИО"], line["Возраст"], line["Группа"]])
+#Время последнего изменения файла
+print(os.path.getmtime('C:/Users/Ivan/Desktop/Отчеты/PL labs/lab 5/src/filefunctions.py'))
+#Время последнего доступа к файлу
+print(os.path.getatime('C:/Users/Ivan/Desktop/Отчеты/PL labs/lab 5/src/filefunctions.py'))
+#Размер файла в байтах
+print(os.path.getsize('C:/Users/Ivan/Desktop/Отчеты/PL labs/lab 5/src/filefunctions.py'))

@@ -1,4 +1,3 @@
-
 # Функция выводит решенный пример
 def print_expression_result(a, b, c, d, k):
 	if (b != 0 and a != 0):
@@ -6,7 +5,6 @@ def print_expression_result(a, b, c, d, k):
 		print( abs(((a**2 - b**3 - c**3 * a**2 ) * (b - c + c*(k - d/b**3)) - (k/b - k/a)*c)**2 - 20000) )
 	else:
 		print("На ноль делить нельзя")
-
 
 #Функция выводит нечетные элементы списка
 def print_odd_elements(lst):

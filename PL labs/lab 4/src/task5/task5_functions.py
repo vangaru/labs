@@ -37,7 +37,7 @@ def print_group_info(my_len, group_name):
 	for group in my_len:
 		if group[0] == group_name:
 			group_info += group[0] + ": "
-
+			
 			for name in group[1]:
 				group_info += name + ", "
 
